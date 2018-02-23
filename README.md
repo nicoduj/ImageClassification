@@ -1,5 +1,4 @@
-# ImageClassification
-Image Classification tests scripts with Keras and tensorflow
+# Image Classification tests scripts with Keras and tensorflow
 
 This work was based on the following Keras blog Post : 
 https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html
@@ -35,7 +34,7 @@ As advised, I used the following steps to build my virtualEnv installation on a 
  $ virtualenv --system-site-packages -p python3 targetDirectory 
 ```
 
-where targetDirectory identifies the top of the Virtualenv tree. Our instructions assume that targetDirectory is ~/tensorflow, but you may choose any directory.
+where targetDirectory identifies the top of the Virtualenv tree.
 
 4. Activate the Virtualenv environment by issuing one of the following commands:
 
@@ -96,7 +95,6 @@ $ tensorboard --logdir ~/[YOUR_LOG_DIR]
 Then go to tensorbaord URL with your favorite browser :  http://localhost:6006 
 
 
-
 ## Scripts description and usage
 
 For all those samples, please ensure that directories exist before launching scripts.
@@ -104,7 +102,6 @@ For all those samples, please ensure that directories exist before launching scr
 ### Image augmentation
 
 1. UnitaryImageAugmentationSample.py
-
 This sript demonstrate a simple image augmentation method from one image
 
 2. ClassImageAugmentationSample.py
@@ -114,19 +111,15 @@ This script use the same approcah, but directory based, so you can make equivale
 ### Models
 
 1. FirstModel.py
-
-
+A model that use dorpout only on the activation layer
 
 2. SecondModel.py
-
-
-
-## Results 
-
+A model that use dropout on each layer
 
 
 ## References
 
+As mentionned, this work is mainly based on the following blog post : 
 https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html
 
 

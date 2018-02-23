@@ -17,9 +17,9 @@ Image.MAX_IMAGE_PIXELS = 1000000000
 img_width, img_height = 150, 150
 train_data_dir = 'data/train'
 validation_data_dir = 'data/validation'
-nb_train_samples = 250
-nb_validation_samples = 75
-epochs = 40
+nb_train_samples = 150
+nb_validation_samples = 50
+epochs = 50
 batch_size = 1
 #use different number if you want to restart from a specific epochs
 start_epoch = 0 
@@ -40,7 +40,7 @@ dimData = np.prod(input_shape[1:])
 
 # Our model
 model = Sequential()
-model.add(Conv2D(16, (3, 3), input_shape=input_shape))
+model.add(Conv2D(32, (3, 3), input_shape=input_shape))
 model.add(Activation('relu'))
 model.add(Dropout(0.10))
 model.add(MaxPooling2D(pool_size=(2, 2)))

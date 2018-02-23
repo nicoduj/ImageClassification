@@ -15,7 +15,7 @@ train_data_dir = 'data/train'
 validation_data_dir = 'data/validation'
 nb_train_samples = 150
 nb_validation_samples = 50
-epochs = 40
+epochs = 50
 batch_size = 1
 # PLEASE MODIFY DEPENDING OF THE NUMBER OF CLASSES YOU HAVE
 nb_classes = 4
@@ -27,7 +27,7 @@ else:
     input_shape = (img_width, img_height, 3)
 
 model = Sequential()
-model.add(Conv2D(16, (3, 3), input_shape=input_shape))
+model.add(Conv2D(32, (3, 3), input_shape=input_shape))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 
@@ -55,14 +55,10 @@ model.summary()
 
 # this is the augmentation configuration we will use for training
 train_datagen = ImageDataGenerator(
-    	rescale=1. / 255,
-        rotation_range=40,
-        width_shift_range=0.2,
-        height_shift_range=0.2,
-        shear_range=0.2,
-        zoom_range=0.2,
-        horizontal_flip=True,
-        fill_mode='nearest')
+    rescale=1. / 255,
+    shear_range=0.2,
+    zoom_range=0.2,
+    horizontal_flip=True)
 
 # this is the augmentation configuration we will use for testing:
 # only rescaling

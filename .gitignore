@@ -1,8 +1,9 @@
-# Folders Train / Validate
+# Folders Train / Validate / weights and models output
 data/
 generated/
 logs/
-virtualenv
+virtualenv/
+*.h5
 
 # OS X
 .DS_Store

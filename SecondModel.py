@@ -36,6 +36,8 @@ else:
 train_datagen = ImageDataGenerator(rescale=1./255)
 
 
+
+
 dimData = np.prod(input_shape[1:])
 
 # Our model
@@ -83,6 +85,14 @@ counter = Counter(train_generator.classes)
 max_val = float(max(counter.values()))       
 class_weights = {class_id : max_val/num_images for class_id, num_images in counter.items()}                     
 
+#our validation generator
+test_datagen = ImageDataGenerator(rescale=1. / 255)
+validation_generator = test_datagen.flow_from_directory(
+    validation_data_dir,
+    target_size=(img_width, img_height),
+    batch_size=batch_size,
+    class_mode='categorical')
+
 # printing class weights
 print(class_weights)
 
@@ -95,6 +105,8 @@ model.fit_generator(
     steps_per_epoch=nb_train_samples/batch_size,
     epochs=epochs,
     class_weight=class_weights,
+    validation_data=validation_generator,
+    validation_steps=nb_validation_samples,
     verbose=1,
     callbacks=[tensorboard],
     initial_epoch=start_epoch

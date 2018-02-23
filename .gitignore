@@ -1,3 +1,15 @@
+# Folders Train / Validate
+data/
+generated/
+logs/
+virtualenv
+
+# OS X
+.DS_Store
+
+# vscode
+.vscode/*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

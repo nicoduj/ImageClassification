@@ -111,7 +111,7 @@ This script use the same approcah, but directory based, so you can make equivale
 ### Models
 
 1. [FirstModel](FirstModel.py)
-A model that use dorpout only on the activation layer
+A model that use dropout only on the activation layer, and image augmentation technique
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/19813688/36601211-e2e09176-18b4-11e8-80cf-6340e1561482.png" 
@@ -119,7 +119,7 @@ width="300" alt="run 1519394356">
 </p>
 
 2. [SecondModel](SecondModel.py)
-A model that use dropout on each layer, and class weights representation (can be of use if classes are not equivalentaly representated). No augmentation on this test.
+A model that use dropout on each layer, and class weights representation. No augmentation on this test.
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/19813688/36601216-e5c048f0-18b4-11e8-9187-6b2cec2402a9.png" 
@@ -147,7 +147,7 @@ width="300" alt="Val_acc">
 width="300" alt="Val_loss">
 </p>
 
-As you can see, the second approach gives better theorical results, but loss is very fuzzy on validation set, meaning that the model is not stable at all from my point of
+As you can see, the second approach gives better theorical results, but loss is very fuzzy on validation set, meaning that the model is not stable at all from my point of vue.
 
 ## Reference
 

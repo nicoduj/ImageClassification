@@ -14,21 +14,21 @@ Feel free to take those as a first step, and improove them by trying and error. 
 
 ## TensorFlow Environment installation
 
-You will find all installation option there : 
+You will find complete installation instructions there : 
 https://www.tensorflow.org/install/install_mac
 
 As advised, I used the following steps to build my virtualEnv installation on a mac : 
 
 1. Start a terminal (a shell). You'll perform all subsequent steps in this shell.
 
-2. Install pip and Virtualenv by issuing the following commands:
+2. Install pip and Virtualenv :
 
 ```bash
  $ sudo easy_install pip
  $ pip install --upgrade virtualenv 
  ```
 
-3. Create a Virtualenv environment by issuing a command of one of the following formats:
+3. Create a Virtualenv environment :
 
 ```bash
  $ virtualenv --system-site-packages -p python3 targetDirectory 
@@ -36,7 +36,7 @@ As advised, I used the following steps to build my virtualEnv installation on a 
 
 where targetDirectory identifies the top of the Virtualenv tree.
 
-4. Activate the Virtualenv environment by issuing one of the following commands:
+4. Activate the Virtualenv environment :
 
 ```bash
 $ cd targetDirectory
@@ -54,7 +54,7 @@ The preceding source command should change your prompt to the following:
  (targetDirectory)$ easy_install -U pip
  ```
 
-6. Issue the following commands to install TensorFlow and all the packages that TensorFlow requires into the active Virtualenv environment:
+6. Issue the following command to install TensorFlow and all the packages that TensorFlow requires into the active Virtualenv environment:
 
 ```bash
  (targetDirectory)$ pip3 install --upgrade tensorflow 

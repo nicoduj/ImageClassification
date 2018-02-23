@@ -9,7 +9,7 @@ However, and unlike the blog post, I wanted to evaluate this approcah on a multi
 
 I won't share the business case of this work, only the models that were used, and some scripts made to avaluate image Augmentation impact on those.
 
-Feel free to take those as a first steps, and improove them by tryning and error :see_no_evil: :hear_no_evil: :speak_no_evil: 
+Feel free to take those as a first steps, and improove them by trying and error :see_no_evil: :hear_no_evil: :speak_no_evil: 
 
 
 ## TensorFlow Environment installation
@@ -101,19 +101,19 @@ For all those samples, please ensure that directories exist before launching scr
 
 ### Image augmentation
 
-1. UnitaryImageAugmentationSample.py
+1. [UnitaryImageAugmentationSample](UnitaryImageAugmentationSample.py)
 This sript demonstrate a simple image augmentation method from one image
 
-2. ClassImageAugmentationSample.py
+2. [ClassImageAugmentationSample](ClassImageAugmentationSample.py)
 This script use the same approcah, but directory based, so you can make equivalent classes in temr of numbers of sample .
 
 
 ### Models
 
-1. FirstModel.py
+1. [FirstModel](FirstModel.py)
 A model that use dorpout only on the activation layer
 
-2. SecondModel.py
+2. [SecondModel](SecondModel.py)
 A model that use dropout on each layer, and class weights representation (can be of use if classes are not equivalentaly representated).
 
 

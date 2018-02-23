@@ -1,11 +1,3 @@
-################################
-#in order to launch tensoarboard
-################################
-#cd ~/tensorflow/lib/python3.6/site-packages/tensorboard/
-#python tensorboard --logdir ~/Documents/DEV/TEST_DL_CLASSIF/keras/logs/
-################################
-
-
 from keras.preprocessing.image import ImageDataGenerator
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D
@@ -26,12 +18,13 @@ img_width, img_height = 150, 150
 train_data_dir = 'data/train'
 validation_data_dir = 'data/validation'
 nb_train_samples = 250
-nb_validation_samples = 50
-epochs = 25
-batch_size = 10
+nb_validation_samples = 75
+epochs = 40
+batch_size = 1
 #use different number if you want to restart from a specific epochs
 start_epoch = 0 
-
+# PLEASE MODIFY DEPENDING OF THE NUMBER OF CLASSES YOU HAVE
+nb_classes = 4
 
 if K.image_data_format() == 'channels_first':
     input_shape = (3, img_width, img_height)
@@ -47,7 +40,7 @@ dimData = np.prod(input_shape[1:])
 
 # Our model
 model = Sequential()
-model.add(Conv2D(32, (3, 3), input_shape=input_shape))
+model.add(Conv2D(16, (3, 3), input_shape=input_shape))
 model.add(Activation('relu'))
 model.add(Dropout(0.10))
 model.add(MaxPooling2D(pool_size=(2, 2)))
@@ -66,8 +59,7 @@ model.add(Flatten())
 model.add(Dense(64))
 model.add(Activation('relu'))
 model.add(Dropout(0.25))
-# PLEASE MODIFY DEPENDING OF THE NUMBER OF CLASSES YOU HAVE
-model.add(Dense(4))
+model.add(Dense(nb_classes))
 model.add(Activation('softmax'))
 
 

@@ -114,7 +114,7 @@ This script use the same approcah, but directory based, so you can make equivale
 A model that use dorpout only on the activation layer
 
 2. SecondModel.py
-A model that use dropout on each layer
+A model that use dropout on each layer, and class weights representation (can be of use if classes are not equivalentaly representated).
 
 
 ## References

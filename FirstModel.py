@@ -13,11 +13,12 @@ Image.MAX_IMAGE_PIXELS = 1000000000
 img_width, img_height = 150, 150
 train_data_dir = 'data/train'
 validation_data_dir = 'data/validation'
-nb_train_samples = 250
+nb_train_samples = 150
 nb_validation_samples = 50
-epochs = 25
-batch_size = 10
-
+epochs = 40
+batch_size = 1
+# PLEASE MODIFY DEPENDING OF THE NUMBER OF CLASSES YOU HAVE
+nb_classes = 4
 
 # Our model
 if K.image_data_format() == 'channels_first':
@@ -26,7 +27,7 @@ else:
     input_shape = (img_width, img_height, 3)
 
 model = Sequential()
-model.add(Conv2D(32, (3, 3), input_shape=input_shape))
+model.add(Conv2D(16, (3, 3), input_shape=input_shape))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 
@@ -41,9 +42,8 @@ model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Flatten())
 model.add(Dense(64))
 model.add(Activation('relu'))
-model.add(Dropout(0.10))
-# PLEASE MODIFY DEPENDING OF THE NUMBER OF CLASSES YOU HAVE
-model.add(Dense(4))
+model.add(Dropout(0.5))
+model.add(Dense(nb_classes))
 model.add(Activation('softmax'))
 
 model.compile(loss='categorical_crossentropy',
